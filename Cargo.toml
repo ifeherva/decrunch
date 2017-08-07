@@ -1,0 +1,17 @@
+[package]
+name = "decrunch"
+version = "0.1.0"
+authors = ["Istvan Fehervari <gooksl@gmail.com>"]
+description = "Decoder for crunch-compressed texture data."
+license = "MIT"
+build = "build.rs"
+repository = "https://github.com/ifeherva/decrunch"
+homepage = "https://github.com/ifeherva/decrunch"
+keywords = ["crunch", "dxt", "image-processing", "texture"]
+travis-ci = { repository = "https://github.com/ifeherva/decrunch", branch = "master" }
+
+[build-dependencies]
+gcc = "0.3"
+
+[dependencies]
+libc = "0.2.26"
