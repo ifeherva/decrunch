@@ -12,8 +12,6 @@ use decrunch::*;
 use std::fs::File;
 use std::io::Read;
 
-# use std::io;
-# fn foo() -> io::Result<()> {
 let mut compressed_file = File::open("testdata/copyright_2048_compressed.dat")?;
 let mut compressed_data = Vec::new();
 
@@ -28,7 +26,4 @@ let decompressed_data = match c_data.decode_level(0) {
 };
 
 assert!(decompressed_data.len() > 0);
-
-# Ok(())
-# }
 ```
