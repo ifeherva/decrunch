@@ -7,7 +7,7 @@ This crate provides a Rust wrapper around [crunch's](https://github.com/Binomial
 
 # Example
 
-```
+```rust
 use decrunch::*;
 use std::fs::File;
 use std::io::Read;
