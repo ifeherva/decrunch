@@ -18,6 +18,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+//! # Decoder for crunch-compressed texture data
+//!
+//! This crate provides a Rust wrapper around [crunch's](https://github.com/BinomialLLC/crunch) decompressor.
+//!
+//! # Example
+//!
+//! ```
+//! use decrunch::*;
+//! use std::fs::File;
+//! use std::io::Read;
+//!
+//! # use std::io;
+//! # fn foo() -> io::Result<()> {
+//! let mut compressed_file = File::open("testdata/copyright_2048_compressed.dat")?;
+//! let mut compressed_data = Vec::new();
+//!
+//! compressed_file.read_to_end(&mut compressed_data)?;
+//!
+//! let c_data = CrunchedData::new(&compressed_data);
+//! let decompressed_data = match c_data.decode_level(0) {
+//!     None => {
+//!         panic!("Failed to decompress texture data");
+//!     }
+//!     Some(res) => res,
+//! };
+//!
+//! assert!(decompressed_data.len() > 0);
+//!
+//! # Ok(())
+//! # }
+//! ```
+
+
 extern crate libc;
 
 mod crunch;
