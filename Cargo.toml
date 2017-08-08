@@ -1,6 +1,6 @@
 [package]
 name = "decrunch"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Istvan Fehervari <gooksl@gmail.com>"]
 description = "Decoder for crunch-compressed texture data."
 license = "MIT"

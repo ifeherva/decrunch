@@ -25,6 +25,11 @@ void *crnd_unpack_begin(const void *pData, crnd::uint32 data_size)
     return crnd::crnd_unpack_begin(pData, data_size);
 }
 
+bool crnd_unpack_end(crnd::crnd_unpack_context pContext)
+{
+    return crnd::crnd_unpack_end(pContext);
+}
+
 bool crnd_unpack_level(
     crnd::crnd_unpack_context pContext,
     void **ppDst, crnd::uint32 dst_size_in_bytes, crnd::uint32 row_pitch_in_bytes,

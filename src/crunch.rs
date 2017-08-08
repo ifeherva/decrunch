@@ -39,6 +39,8 @@ extern "C" {
 
     fn crnd_unpack_begin(pData: *const uint8_t, data_size: uint32_t) -> *const c_void;
 
+    fn crnd_unpack_end(ctx: *const c_void) -> c_int;
+
     fn crnd_unpack_level(
         pContext: *const c_void,
         ppDst: *const *const uint8_t,
@@ -93,5 +95,11 @@ pub fn unpack_level(
             row_pitch_in_bytes as uint32_t,
             level_index as uint32_t,
         ) > 0
+    }
+}
+
+pub fn unpack_end(ctx: *const c_void) {
+    unsafe {
+        crnd_unpack_end(ctx);
     }
 }

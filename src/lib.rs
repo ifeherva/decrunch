@@ -183,10 +183,17 @@ impl<'a> CrunchedData<'a> {
             &mut dst,
             info.blocks_x * info.bytes_per_block,
             level,
-        ) {
+        )
+        {
             return None;
         }
         Some(dst)
+    }
+}
+
+impl<'a> Drop for CrunchedData<'a> {
+    fn drop(&mut self) {
+        crunch::unpack_end(self.ctx);
     }
 }
 
