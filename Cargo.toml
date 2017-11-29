@@ -14,4 +14,4 @@ travis-ci = { repository = "https://github.com/ifeherva/decrunch", branch = "mas
 gcc = "0.3"
 
 [dependencies]
-libc = "*"
+libc = ">=0.2.26"
