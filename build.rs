@@ -21,12 +21,10 @@
 extern crate gcc;
 
 fn main() {
-
-    gcc::Config::new()
+    gcc::Build::new()
         .flag("-fno-strict-aliasing")
         .define("NDEBUG", None)
         .cpp(true)
         .file("crunch/crn_decomp.cpp")
         .compile("libcrunch.a");
-
 }
